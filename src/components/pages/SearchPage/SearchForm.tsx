@@ -21,7 +21,7 @@ function SearchForm({ query }: Props) {
   return (
     <Box
       sx={{
-        paddingTop: "32px",
+        paddingTop: query ? "32px" : "0",
         height: query ? "auto" : "100vh",
         minHeight: query ? "none" : "300px",
         display: "flex",
@@ -68,11 +68,19 @@ function SearchForm({ query }: Props) {
           bgcolor: "#f6f8fa",
           width: "100%",
           mt: 2,
+          WebkitBoxShadow: "5px 6px 5px 0px rgba(0,0,0,0.06)",
+          MozBoxShadow: "5px 6px 5px 0px rgba(0,0,0,0.06)",
+          BoxShadow: "5px 6px 5px 0px rgba(0,0,0,0.06)",
         }}
       >
         <InputBase
           defaultValue={query}
-          sx={{ ml: 1, flex: 1, width: "100%" }}
+          sx={{
+            ml: 1,
+            flex: 1,
+            width: "100%",
+    
+          }}
           placeholder="Search for repositories"
           inputProps={{ "aria-label": "search for repositories" }}
           inputRef={inputRef}

@@ -28,7 +28,7 @@ function RepoHeader({ repo }: RepoHeaderProps) {
               loading: "lazy",
             },
           }}
-          sx={{width:"80px", height:"80px"}}
+          sx={{ width: "80px", height: "80px" }}
           src={repo.owner.avatar_url}
           alt={repo.owner.login}
         />
@@ -37,23 +37,27 @@ function RepoHeader({ repo }: RepoHeaderProps) {
             sx={{
               color: "black",
               textDecoration: "none",
-              fontSize: "2rem",
+              fontSize: "1.75rem",
             }}
             variant="h2"
             fontWeight={"bold"}
           >
             {repo.name}
-              <Button
-                target="_blank"
-                
-                sx={{ ml:1, background: "black", minWidth:"0", p:1, borderRadius:"50%"}}
-                variant="contained"
-                
-                component={Link}
-                to={repo.svn_url}
-              >
-                <GitHub fontSize="small"/>
-              </Button>
+            <Button
+              target="_blank"
+              sx={{
+                background: "black",
+                minWidth: "0",
+                p: 1,
+                borderRadius: "50%",
+                ml: "8px",
+              }}
+              variant="contained"
+              component={Link}
+              to={repo.svn_url}
+            >
+              <GitHub fontSize="small" />
+            </Button>
           </Typography>
           <Typography
             sx={{
@@ -77,6 +81,8 @@ function RepoHeader({ repo }: RepoHeaderProps) {
             alignItems: "center",
             gap: "4px",
           }}
+          marginTop={{ sm: "0px", xs: "8px" }}
+
         >
           <StarIcon fontSize="large" sx={{ color: "#fcd53f" }} />
           <Typography>Star</Typography>
